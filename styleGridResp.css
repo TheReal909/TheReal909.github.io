@@ -1,0 +1,70 @@
+section.year{
+    display: grid;
+    grid-template-areas: 
+     'Head'
+     'Fall'
+     'Spring'
+     ;
+}
+
+main {
+    margin: 1em;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+th, td {
+    border: solid 1px gray;
+    padding: .5em;
+}
+
+section.year>h3 {
+    grid-area: Head;
+    border: solid 1px black;
+    margin: 0em;
+    background-color: peachpuff;
+    text-align: center;
+}
+
+
+@media screen and (min-width: 35em) and (max-width: 90em) {
+    section.year {
+        grid-template-areas:
+            'Head Head'
+            'Fall Spring'
+            ;
+    }
+}
+
+
+@media screen and (min-width: 90em) {
+
+
+    main {
+      display: grid;
+      grid-template-areas: 'First Second Third Fourth';
+  }
+
+  section.year:nth-of-type(1) {
+      grid-area: First;
+  }
+
+  section.year:nth-of-type(2) {
+    grid-area: Second;
+}
+section.year:nth-of-type(3) {
+    grid-area: Third;
+}
+section.year:nth-of-type(4) {
+    grid-area: Fourth;
+}
+/* table:last-of-type thead {
+    display: none;
+} */
+
+ /* body {
+     background-color: purple;
+ } */
+}

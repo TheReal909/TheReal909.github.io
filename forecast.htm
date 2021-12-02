@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForeCast</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to forecast app 2021</h1>
+    </header>
+    <main>
+        <section>
+            <button id="btn" type="button">Check the weather today</button>
+        </section>
+        <section class="formToShow">
+            <h1>Temperature: <span id="temp"></span></h1>
+        </section>
+    </main>
+
+    <script>
+        var button = document.getElementById("btn");
+        function getWeather() {
+            console.log("im here")
+            let promise = fetch("https://api.weather.gov/gridpoints/SLC/102,110/forecast");
+            promise.then( resp => resp.json()).then(
+                function (forecast) {
+                    console.log(forecast);
+                    console.log(typeof forecast.properties.periods[0].temperature);
+                    var spot = document.getElementById("temp");
+                    spot.innerHTML = forecast.properties.periods[0].temperature + "F";
+                }
+            )
+        }
+         button.addEventListener("click", getWeather);
+    </script>
+</body>
+</html>

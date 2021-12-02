@@ -1,0 +1,11 @@
+h1{
+    color: rgba(255, 220, 21, 220);
+    background-color: rgb(21%, 29%, 100%);
+}
+p:nth-child(3){
+    background-color: rgb(25%, 50%, 50%);
+    color: salmon;
+}
+p::after::first-line{
+        content: "good morning";
+}

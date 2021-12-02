@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Pracice mid term coding</title>
+    <link rel="stylesheet" href="practice.css" />
+  </head>
+  <body>
+    <header>
+      <h1 style="text-align: center">Testing: ...</h1>
+    </header>
+    <main>
+      <ul></ul>
+    </main>
+    <footer>
+      This is the footer. Please <a href="">contact</a> us with your answers.
+    </footer>
+  </body>
+  <script>
+    function test() {
+      var parent = document.querySelector("ul");
+
+      for (i = 0; i < 5; i++) {
+        var list = document.createElement("li");
+        list.innerHTML = i;
+        parent.appendChild(list);
+      }
+    }
+    window.addEventListener("load", test);
+  </script>
+</html>
